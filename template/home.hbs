@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<HTML>
+    <HEAD>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+      var version = 1.0;
+    </script>
+    <script language="Javascript1.5">
+      var version = 1.5;
+    </script>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/styles.css">
+        <title>{{pageTitle}}</title>
+        <link rel="icon" href="/img/icon.png">
+    </HEAD>
+    <body>
+        <div class="main-content">
+        {{> header}}
+        <p>{{screamIt welcomeText}}</p>
+
+        <form>
+            <input placeholder="location">
+            <button>Search</button>
+        </form>
+        <p id="message-1">
+        </p>
+        <p id="message-2">
+        </p>
+        </div>
+        {{> footer}}
+        <script>
+
+          const checkweatherForm = document.querySelector('form')
+          if (!checkweatherForm.addEventListener) {                    // For all major browsers, except IE 8 and earlier
+            document.getElementById("message-1").innerHTML = "Please update your browser"; 
+          } else if (checkweatherForm.addEventListener.length < 2) {
+            document.getElementById("message-1").innerHTML = "Please update your browser"; 
+          } else {
+
+            $.getScript( "/js/app.js" ).done(function( script, textStatus )
+            {
+              console.log( textStatus );
+            }).fail(function( jqxhr, settings, exception )
+            {
+              $( "div.log" ).text( "Triggered ajaxError handler." );
+            });
+          }
+        </script>
+    </body>
+</HTML>
