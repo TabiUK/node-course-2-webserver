@@ -1,6 +1,6 @@
 # node-course-2-webserver
 
-* This is all based on [Udemy Cpurses](www.udemy.com). 
+* This is all based on [Udemy Courses](https://www.udemy.com/). 
 * Course nodejs developer.
 * Main Entry file: server.js
 
