@@ -1,6 +1,8 @@
 
 console.log('Hello world!')
 
+const hostaddress = "localhost" // please update this to be your sitename or ip address
+
 document.getElementById("message-1").innerHTML = ": " + navigator.platform + " : " + navigator.appVersion + " : " + navigator.userAgent;
 const weatherForm = document.querySelector('form')
 if (!weatherForm.addEventListener) {                    // For all major browsers, except IE 8 and earlier
@@ -32,7 +34,7 @@ weatherForm.addEventListener('submit', (e) => {
     messageOne.textContent = 'Searching'
     messageTwo.textContent = ""
 
-    fetch('http://192.168.0.17:3000/weather?address=' + location).then((response) => {
+    fetch('http://' + hostaddress + ':3000/weather?address=' + location).then((response) => {
         if (response.json) {
             response.json().then((data) => {
                 if (data.errorMessage) {
